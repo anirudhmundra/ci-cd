@@ -90,13 +90,6 @@ jobs:
           github-token: ${{ secrets.GH_PAT }}
           output-file: false  # Do not commit changelog file
           create-summary: true
-
-      - name: Create Git Tag
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a ${{ steps.changelog.outputs.tag }} -m "Release ${{ steps.changelog.outputs.tag }}"
-          git push origin ${{ steps.changelog.outputs.tag }}
   
   release:
     runs-on: ubuntu-latest
