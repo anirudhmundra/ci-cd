@@ -21,12 +21,11 @@ func TestHandler(t *testing.T) {
 	}
 }
 
-
 func TestIndiaHandler(t *testing.T) {
 	req := httptest.NewRequest("GET", "/india", nil)
 	w := httptest.NewRecorder()
 
-	handler(w, req)
+	indiaHandler(w, req)
 
 	resp := w.Result()
 	body, _ := io.ReadAll(resp.Body)
