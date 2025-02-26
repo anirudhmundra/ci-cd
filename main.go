@@ -10,12 +10,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func india_handler(w http.ResponseWriter, r *http.Request) {
+func indiaHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Hello, India!")
 }
 
 func main() {
 	http.HandleFunc("/", handler)
-	http.HandleFunc("/india", india_handler)
+	http.HandleFunc("/india", indiaHandler)
 	http.ListenAndServe(":8080", nil)
 }
